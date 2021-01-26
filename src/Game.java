@@ -14,6 +14,8 @@ public class Game {
 	 */
 	public Game() {
 		
+		deck = new Deck();
+
 	}
 
 	/**
@@ -25,7 +27,9 @@ public class Game {
 
 		while (!deck.isEmpty()) {
 
-			// your code here
+			deck.deleteTopCard();
+			System.out.println("##################################################");
+			deck.printDeck();
 
 		}
 
