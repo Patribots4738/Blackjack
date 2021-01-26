@@ -1,5 +1,6 @@
 package src;
 
+import java.util.Arrays;
 /** 
  * This file should contain a deck of 52 instantiated card classes that
  * has one of each suit and number. Some helpful methods to include would
@@ -24,8 +25,20 @@ public class Deck {
 		// fills the deck array with 52 blank spaces for you to fill
 		this.deck = new Card[52];
 
-		// your code here...
+		int cardsAddedToDeck = 0;
 
+		for (int value = 0; value <= 12; value++) {
+
+			for (int suit = 0; suit <= 3; suit++) {
+				
+				this.deck[cardsAddedToDeck] = new Card(value, suit);
+
+				cardsAddedToDeck++;
+
+			}
+
+		}
+		System.out.println(Arrays.toString(this.deck));
 		// shuffle the deck so it is ready for play.
 		this.shuffle();
 

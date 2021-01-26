@@ -1,4 +1,6 @@
 package src;
+
+
 /**
  * This is the main class, like Robot.java in the robot's code.
  * It is here where you will be controlling the deck and the player class
@@ -33,8 +35,9 @@ public class Game {
 
 	public static void main(String[] args) {
 		
-		Game game = new Game();
-		game.run();
+		/*Game game = new Game();
+		game.run();*/
+		Deck deck = new Deck();
 
 	}
 
