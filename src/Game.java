@@ -8,6 +8,7 @@ public class Game {
 	
 	Deck deck;
 	double dollars;
+	boolean isPlayerTurn;
 	/**
 	 * You should begin by instantiating (giving values to) the deck and the player
 	 * as well as setting the dollars to the initial amount you want
@@ -15,6 +16,7 @@ public class Game {
 	public Game() {
 		
 		deck = new Deck();
+		isPlayerTurn = true;
 
 	}
 
