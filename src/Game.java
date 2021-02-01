@@ -1,4 +1,6 @@
 package src;
+
+import java.util.ArrayList;
 /**
  * This is the main class, like Robot.java in the robot's code.
  * It is here where you will be controlling the deck and the player class
@@ -36,14 +38,13 @@ public class Game {
 			deck.deleteTopCard();
 			deck.printDeck();
 			System.out.println("---------------------------");
-			System.out.println(deck.deck.size());
 
 		}
 
 	}
 
 	public static void main(String[] args) {
-		
+
 		Game game = new Game();
 		game.run();
 

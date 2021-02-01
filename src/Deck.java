@@ -67,11 +67,7 @@ public class Deck {
 
 	public void deleteTopCard() {
 
-		for (int i = 0; i < this.deck.size() - 1; i++) {
-
-			this.deck.remove(0);
-
-		}
+		this.deck.remove(0);
 
 	}
 
@@ -90,13 +86,12 @@ public class Deck {
 				int randomNum = random.nextInt(this.deck.size());
 	
 				Card currentCard = this.deck.get(cards);
+				Card randomCard = this.deck.get(randomNum);
 	
-				this.deck.add(randomNum, this.deck.get(cards));
-				this.deck.add(cards, this.deck.get(randomNum));
-				this.deck.add(randomNum, currentCard);
+				this.deck.set(cards, randomCard);
+				this.deck.set(randomNum, currentCard);
 	
 			}
-	
 
 		}
 
