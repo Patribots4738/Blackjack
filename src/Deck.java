@@ -1,6 +1,7 @@
 package src;
 
 import java.util.Random;
+import java.util.ArrayList;
 
 /**
  * This file should contain a deck of 52 instantiated card classes that has one
@@ -15,7 +16,7 @@ public class Deck {
 	 * In your constructor, you should fill it up with instances of cards each
 	 * with a different suit and value.
 	 */ 
-	private Card[] deck;
+	public ArrayList<Card> deck;
 
 	/**
 	 * This is the constructor for the deck class. It is here where you can populate
@@ -25,16 +26,13 @@ public class Deck {
 	public Deck() {
 
 		// fills the deck array with 52 blank spaces for you to fill
-		this.deck = new Card[52];
-
-		int num = 0;
+		this.deck = new ArrayList<Card>();
 
 		for (int suit = 0; suit < 4; suit++) {
 
 			for (int value = 0; value < 13; value++) {
 
-				deck[num] = new Card(value, suit);
-				num++;
+				deck.add(new Card(value, suit));
 
 			}
 
@@ -52,7 +50,7 @@ public class Deck {
 	 */
 	public Card getNextCard() {
 
-		return this.deck[0];
+		return this.deck.get(0);
 
 	}
 
@@ -63,15 +61,15 @@ public class Deck {
 	 */
 	public boolean isEmpty() {
 
-		return (this.deck.length == 0) ? true : false;
+		return (this.deck.size(0)) ? true : false;
 
 	}
 
 	public void deleteTopCard() {
 
-		for (int i = 0; i < this.deck.length - 1; i++) {
+		for (int i = 0; i < this.deck.size() - 1; i++) {
 
-			this.deck[i] = this.deck[i + 1];
+			this.deck.remove(0);
 
 		}
 
@@ -87,21 +85,20 @@ public class Deck {
 
 		for (int i = 0; i < 5; i++) {
 
-			for (int cards = 0; cards < this.deck.length; cards++) {
+			for (int cards = 0; cards < this.deck.size(); cards++) {
 
-				int randomNum = random.nextInt(this.deck.length);
+				int randomNum = random.nextInt(this.deck.size());
 	
-				Card currentCard = this.deck[cards];
+				Card currentCard = this.deck.get(cards);
 	
 				this.deck[cards] = this.deck[randomNum];
+				this.deck.add(cards, randomNum);
 				this.deck[randomNum] = currentCard;
 	
 			}
 	
 
 		}
-
-		this.printDeck();
 
 	}
 
