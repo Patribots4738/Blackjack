@@ -61,7 +61,7 @@ public class Deck {
 	 */
 	public boolean isEmpty() {
 
-		return (this.deck.size(0)) ? true : false;
+		return (this.deck.size() == 0) ? true : false;
 
 	}
 
@@ -91,9 +91,9 @@ public class Deck {
 	
 				Card currentCard = this.deck.get(cards);
 	
-				this.deck[cards] = this.deck[randomNum];
-				this.deck.add(cards, randomNum);
-				this.deck[randomNum] = currentCard;
+				this.deck.add(randomNum, this.deck.get(cards));
+				this.deck.add(cards, this.deck.get(randomNum));
+				this.deck.add(randomNum, currentCard);
 	
 			}
 	
@@ -104,9 +104,9 @@ public class Deck {
 
 	public void printDeck() {
 
-		for (int i = 0; i < this.deck.length; i++) {
+		for (int i = 0; i < this.deck.size(); i++) {
 
-			System.out.println(this.deck[i]);
+			System.out.println(this.deck.get(i));
 
 		}
 

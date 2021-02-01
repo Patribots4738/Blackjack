@@ -36,7 +36,7 @@ public class Game {
 			deck.deleteTopCard();
 			deck.printDeck();
 			System.out.println("---------------------------");
-			System.out.println(deck.deck.length);
+			System.out.println(deck.deck.size());
 
 		}
 
