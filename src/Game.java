@@ -35,9 +35,7 @@ public class Game {
 
 		while (!deck.isEmpty()) {
 
-			deck.deleteTopCard();
-			deck.printDeck();
-			System.out.println("---------------------------");
+			
 
 		}
 
