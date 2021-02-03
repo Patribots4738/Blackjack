@@ -24,7 +24,8 @@ public class Player {
 		}
 		
 		return move;
-
 	}
-
+	
 }
+
+
