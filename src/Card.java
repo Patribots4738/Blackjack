@@ -70,6 +70,7 @@ public class Card {
 		// If treating the ace as an 11 does not bring the value of the hand, return the
 		// value if ace was treated as 11. If the hand is too large, the smaller value is used.
 		return (value[1] > value[0] && value[1] <= 21) ? value[1] : value[0];
+		
 	}
 
 }
