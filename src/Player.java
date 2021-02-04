@@ -13,10 +13,10 @@ public class Player {
 
 	public String getMove() {
 
-		System.out.println("Make your move! (hit, stand, or bet):");
+		System.out.println("Make your move! (hit, stand, or doubble):");
 		String move = this.scanner.nextLine();
 
-		if (!move.matches("^(hit|stand|bet)$")) {
+		if (!move.matches("^(hit|stand|doubble)$")) {
 
 			System.out.println("Your move is bad and you should feel bad; try again!");
 			return this.getMove();

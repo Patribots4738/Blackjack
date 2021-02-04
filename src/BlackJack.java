@@ -22,20 +22,6 @@ public class BlackJack{
         }
     }
 
-    public void firstTwo(){
-
-        ArrayList hand = new ArrayList<Card>();
-        
-        Card card = deck.getNextCard();
-        System.out.println(card);
-        hand.add(card);
-
-        card = deck.getNextCard();
-        System.out.println(card);
-        hand.add(card);
-
-    }
-    
     public static void main(String[] args) {
     
         Deck deck = new Deck();
@@ -44,13 +30,13 @@ public class BlackJack{
 
         String move; 
         
-        ArrayList hand;
+        ArrayList hand = deck.firstTwo();
+        
+        boolean isRunning = true;
 
-        while(true) {
+        while(isRunning == true) {
 
             move = player.getMove(); 
-
-            BlackJack.firstTwo();
 
             if (move.equals("hit")) {
 
@@ -60,9 +46,30 @@ public class BlackJack{
 
                 hand.add(card);
 
+                Card.calcValue(hand);
+
+                if ((Card.calcValue(hand) == 21)) {
+
+                    System.out.println("Nice you won!");
+
+                    isRunning = false;
+                    
+                } else {
+
+                    if (!(Card.calcValue(hand) > 21)) {
+
+                        
+                    } else {
+
+                        System.out.println("You bust, your bad.");
+
+                        isRunning = false;
+                    }
+
+                }
+                
             }
 
-            //Card.calcValue(hand)
         }
      
         

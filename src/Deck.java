@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import java.util.Random;
 
+import java.util.ArrayList;
 /** 
  * This file should contain a deck of 52 instantiated card classes that
  * has one of each suit and number. Some helpful methods to include would
@@ -56,6 +57,7 @@ public class Deck {
 
 	}
 
+	
 	/** 
 	 * You should return the card that's on the "top" of the deck here.
 	 * It is returning null now so that VSCode doesn't give any errors,
@@ -79,7 +81,20 @@ public class Deck {
 		return false;
 	}
 
-	
+	public ArrayList firstTwo(){
+
+        ArrayList hand = new ArrayList<Card>();
+        
+        Card card = this.getNextCard();
+        System.out.println(card);
+        hand.add(card);
+
+        card = this.getNextCard();
+        System.out.println(card);
+        hand.add(card);
+
+		return hand;
+    }
 	/**
 	 * This method should randomize the cards' positions in the deck so they are
 	 * ready to play another game.
