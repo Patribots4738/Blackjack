@@ -81,6 +81,23 @@ public class Deck {
 		return false;
 	}
 
+	public ArrayList dealerFirstTwo(){
+        
+        ArrayList dealer = new ArrayList<Card>();
+
+		System.out.println("Dealer's hand:");
+
+        Card card = this.getNextCard();
+		System.out.println(card);
+		dealer.add(card);
+
+        card = this.getNextCard();
+        System.out.println(card);
+        dealer.add(card);
+
+		return dealer;
+	}
+	
 	public ArrayList firstTwo(){
 
         ArrayList hand = new ArrayList<Card>();

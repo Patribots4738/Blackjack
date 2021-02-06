@@ -30,6 +30,10 @@ public class BlackJack{
 
         String move; 
         
+        System.out.println("Dealer's first card:");
+        //ArrayList opponent = deck.dealerFirstTwo(); | Prints out two cards (different from the dealer's hand?)
+
+        System.out.println("Your cards:");
         ArrayList hand = deck.firstTwo();
         
         boolean isRunning = true;
@@ -52,27 +56,33 @@ public class BlackJack{
 
                     System.out.println("Nice you won!");
 
+                    ArrayList dealer = deck.dealerFirstTwo();
+
                     isRunning = false;
                     
                 } else {
 
                     if (!(Card.calcValue(hand) > 21)) {
 
-                        
+
                     } else {
 
                         System.out.println("You bust, your bad.");
-
+                        
+                        ArrayList dealer = deck.dealerFirstTwo();
+                        
                         isRunning = false;
                     }
 
                 }
                 
             }
-
+            
+            //if (move.equals("stand")) {
+            //}
+            
         }
      
-        
     }
         
         //Game game = new Game();
